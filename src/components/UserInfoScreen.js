@@ -1,20 +1,51 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, Image, Button } from 'react-native';
 import { connect, useSelector } from 'react-redux'
+import { styles } from '../assets/styles/styles';
+import { theme } from '../assets/styles/theme';
+import { fetchGitHubUserRepos } from '../redux/actions';
 
 const userState = state => state.user
 
-export default function UserInfoScreen() {
-  const user = useSelector(userState)
-  return (
-    <View>
-      {user ? (
-        <>
-          <Text>Nome: { user.name }</Text>
-        </>
-      ) : (
-        <Text>Nenhum usuário encontrado</Text>
-      )}
-    </View>
-  );
+function UserInfoScreen({ navigation, fetchGitHubUserRepos }) {
+  const user = useSelector(userState);
+  
+  const handleSearch = () => {
+    fetchGitHubUserRepos(user.login).then(
+      navigation.navigate('RepositoriesScreen')
+    );
+  };
+
+  if (user) {
+    return (
+      <ScrollView style={{ flex: 1}}>
+          {user.avatar_url && <Image source={{ uri: user.avatar_url }} style={styles.avatarInfo}/>}
+        <View style={styles.pageContainer}>
+          <Text style={styles.nameInfo}>
+            {user.name}
+          </Text>
+          {user.email && <Text style={styles.emailInfo}>{`\u2022 `+ user.email}</Text>}
+          <Text style={styles.bioInfo}>{user.bio}</Text>
+          <View style={styles.containerFollowInfo}>
+            <View style={{ alignItems: 'center' }}>
+              <Text style={{ color: theme.gray }}>Followers</Text>
+              <Text style={ styles.coloredNumber }>
+                {user.followers}
+              </Text>
+            </View>
+            <View style={{ alignItems: 'center' }}>
+              <Text style={{ color: theme.gray }}>Following</Text>
+              <Text style={ styles.coloredNumber}>
+                {user.following}
+              </Text>
+            </View>
+          </View>
+          <Button title="See repositories" uppercase={false} onPress={handleSearch} />
+
+        </View>
+      </ScrollView>
+    );
+  }
 }
+
+export default connect(null, { fetchGitHubUserRepos })(UserInfoScreen);
