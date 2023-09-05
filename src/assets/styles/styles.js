@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 10,
+        padding: 20,
     },
     profileImage: {
         width: 40,
@@ -17,17 +17,18 @@ const styles = StyleSheet.create({
         borderRadius: 20, // Para criar uma imagem de perfil circular
     },
     pageContainer: {
-        backgroundColor: '#fff',
+        flex: 1,
         paddingHorizontal: 24,
         elevation: 0,
         shadowOpacity:0,
         marginTop:0,
-        paddingTop:20,
+        paddingTop:30,
+        backgroundColor: '#fff'
     },
     pageTitle:{
         fontSize: 34,
         fontWeight: '400',
-        color: theme.colors.stroke,
+        color: theme.colors.black,
     },
     inputContainer: {
         flex: 1,
@@ -59,10 +60,24 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         fontWeight: 700,
+        borderRadius: 8,
+        height: 56,
         backgroundColor: theme.colors.blue,
         textTransform: 'capitalise',
         
-      }
+      },
+      avatarInfo: { width: '100%', height: 300, marginTop:0 },
+      nameInfo: { fontSize: 24, fontWeight: 'bold', marginTop: 16},
+      emailInfo: { fontSize: 14,  fontWeight: 'normal', marginVertical: 10, color: theme.colors.lightGray },
+      bioInfo: { flex:1, textAlign: 'left', fontSize: 16, color: theme.colors.lightGray },
+      containerFollowInfo: {  flexDirection: 'row',
+      justifyContent: 'space-around',
+      marginVertical: 20},
+      coloredNumber: {fontSize: 18, fontWeight: 'bold', color: theme.lightBlue}
+
+
+
+    
     
     
 });

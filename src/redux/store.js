@@ -11,11 +11,23 @@ const userSlice = createSlice({
   },
 });
 
+const reposSlice = createSlice({
+  name: 'repos',
+  initialState: null,
+  reducers: {
+    setRepos: (state, action) => {
+      return action.payload;
+    },
+  },
+});
+
 export const { setUser } = userSlice.actions;
+export const { setRepos } = reposSlice.actions;
 
 const store = configureStore({
   reducer: {
     user: userSlice.reducer,
+    repos: reposSlice.reducer,
   },
   middleware: [thunk],
 });
