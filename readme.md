@@ -10,7 +10,7 @@ sobre como colocar o aplicativo em funcionamento.
 
 # Design e recursos sugeridos
 
-Você pode encontrar abaixo um protótipo para o desafio. Sinta-se à vontade para usá-lo ou criar o seu próprio:
+Você pode encontrar abaix   o um protótipo para o desafio. Sinta-se à vontade para usá-lo ou criar o seu próprio:
 [Figma](https://www.figma.com/proto/SJMnBYvDQuAuDim3ehSxBj/Doctor-App---Freebies-(Community)-(Community)?page-id=1%3A499&type=design&node-id=30-506&viewport=985%2C-468%2C1.22&scaling=min-zoom&starting-point-node-id=26%3A2)
 
 Para os assests, recomendamos os ícones do Material:
