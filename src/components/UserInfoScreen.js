@@ -10,7 +10,7 @@ const userState = state => state.user
 function UserInfoScreen({ navigation, fetchGitHubUserRepos }) {
   const user = useSelector(userState);
   
-  const handleSearch = () => {
+  const handleSearchRepos = () => {
     fetchGitHubUserRepos(user.login).then(
       navigation.navigate('RepositoriesScreen')
     );
@@ -19,8 +19,8 @@ function UserInfoScreen({ navigation, fetchGitHubUserRepos }) {
   if (user) {
     return (
       <ScrollView style={{ flex: 1}}>
-          {user.avatar_url && <Image source={{ uri: user.avatar_url }} style={styles.avatarInfo}/>}
-        <View style={styles.pageContainer}>
+        {user.avatar_url && <Image source={{ uri: user.avatar_url }} style={styles.avatarInfo}/>}
+        <View style={[styles.pageContainer, {paddingVertical: 0}]}>
           <Text style={styles.nameInfo}>
             {user.name}
           </Text>
@@ -40,7 +40,7 @@ function UserInfoScreen({ navigation, fetchGitHubUserRepos }) {
               </Text>
             </View>
           </View>
-          <Button title="See repositories" uppercase={false} onPress={handleSearch} />
+          <Button title="See repositories" uppercase={false} onPress={handleSearchRepos} />
 
         </View>
       </ScrollView>
