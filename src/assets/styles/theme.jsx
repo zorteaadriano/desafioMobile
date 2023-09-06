@@ -3,9 +3,9 @@ export const theme = {
       black: '#25282B',
       backgroundColor: '#fff',
       blue: '#4485FD',
-      gray: '#F6F6F6',
+      gray: '#C4C4C4',
       lightBlue: '#2B92E4',
-      lightGray: '#C4C4C4',
+      lightGray: '#F6F6F6',
     },
   
     fonts: {

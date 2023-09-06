@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import { fetchGitHubUser } from '../redux/actions.js';
 import { styles } from '../assets/styles/styles.js';
+import { theme } from '../assets/styles/theme.jsx';
 
 
 function SearchScreen({ navigation, fetchGitHubUser }) {
@@ -17,7 +18,7 @@ function SearchScreen({ navigation, fetchGitHubUser }) {
 
   return (
     <View style={[styles.pageContainer, {marginTop: 80}]}>
-      <Text style={styles.pageTitle}>Find<Text style={{color: '#A0A4A8'}}> a dev</Text></Text>
+      <Text style={styles.pageTitle}>Find<Text style={{color: theme.colors.gray}}> a dev</Text></Text>
       <TextInput
       style={styles.textInput}
         placeholder="Search a dev"
@@ -25,9 +26,8 @@ function SearchScreen({ navigation, fetchGitHubUser }) {
         value={username}
         autoCapitalize='none'
         placeholderTextColor={"#CACCCF"}
-
       />
-      <Button title="Find" style={styles.button} uppercase={false} onPress={handleSearch} />
+      <Button title="Find" style={styles.button} uppercase={false} disabled={!username}   onPress={handleSearch} />
 
       
     </View>

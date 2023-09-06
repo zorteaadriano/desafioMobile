@@ -1,3 +1,30 @@
+# O desafio mobile é um app em react native para visualizar usuários e repositórios do github
+
+#### Stack:
+- React Native
+- Redux
+
+## Preparando ambiente e rodando localmente:
+
+#### Instalar [Node JS](https://nodejs.org/en/download/) na máquina 
+
+#### Instalar [Expo](https://efficient-sloth-d85.notion.site/Instalando-Expo-cc5bfac8f19a41e394889e885355f261) na máquina
+- `npm install -g expo-cli`
+- É necessário instalar o app do expo em seu smartphone para ler o QR ao iniciar o projeto com `npx expo start`, dessa forma o aplicativo será emulado.
+
+#### Clonar o repositório
+- `git clone git@github.com:zorteaadriano/desafioMobile.git`
+
+#### Instalar as dependencias do projeto
+- `cd desafioMobile`
+- `npm install`
+
+#### Iniciar o projeto
+- `npx expo start`
+- Ler o QrCode com o app do expo
+
+
+
 # Desbravador Desafio - Mobile
 Nosso desafio de desenvolvimento mobile com React-native é um simples "Dev Tracker". Os usuários devem poder buscar outros desenvolvedores no Github, visualizar o número de seguidores, número de seguidos, imagem do avatar, e-mail e bio. 
 
